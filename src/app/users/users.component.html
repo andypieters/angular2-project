@@ -1,0 +1,24 @@
+<h1>Users</h1>
+<div>
+<button [routerLink]="['/users/new']" class="btn btn-primary">Add user</button>
+</div>
+<div *ngIf="users">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td><a [routerLink]="['/users/'+user.id]"><i class="glyphicon glyphicon-edit"></i></a></td>
+                <td><a class="clickable" (click)="delete(user)" ><i class="glyphicon glyphicon-remove"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
