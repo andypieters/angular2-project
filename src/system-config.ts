@@ -40,7 +40,6 @@ const barrels: string[] = [
   'app/home',
   'app/users',
   'app/posts',
-  'app/users/new',
   'app/users/user-form',
   'app/not-found',
   'app/loader',
