@@ -4,7 +4,7 @@ import { User } from './user';
 
 @Injectable()
 export class UserService {
-  private _url = "http://jsonplaceholder.typicode.com/users";
+  private _url = "https://jsonplaceholder.typicode.com/users";
 
   constructor(private _http:Http) { }
 
