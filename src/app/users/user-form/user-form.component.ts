@@ -4,13 +4,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { UserValidators } from '../user.validators';
 import { UserService } from '../user.service';
+import { LoaderComponent } from '../../loader';
 import { User } from '../user';
 
 @Component({
   moduleId: module.id,
   selector: 'app-user-form',
   providers: [FormBuilder, UserService],
-  directives: [REACTIVE_FORM_DIRECTIVES],
+  directives: [REACTIVE_FORM_DIRECTIVES, LoaderComponent],
   templateUrl: 'user-form.component.html',
   styleUrls: ['user-form.component.css']
 })
@@ -19,6 +20,8 @@ export class UserFormComponent implements OnInit {
   id: string;
   user = new User();
   form: FormGroup;
+  loading = false;
+
   constructor(
     private _builder: FormBuilder, 
     private _userService: UserService, 
@@ -34,11 +37,16 @@ export class UserFormComponent implements OnInit {
 
     if(!id)
       return;
+    
+    this.loading=true;
 
     this.id = id;
     this._userService.getUser(id)
         .subscribe(
-          user => this.user=user,
+          user => {
+            this.user=user
+            this.loading=false;
+          },
           resonse => {{
             if(resonse.status == 404){
               this._router.navigate(['/users/not-found']);
@@ -61,6 +69,7 @@ export class UserFormComponent implements OnInit {
   }
   	
   submit(){
+    this.loading = true;
     if(!this.id){
       this._userService.addUser(this.form.value)
           .subscribe(user => 

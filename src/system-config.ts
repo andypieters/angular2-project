@@ -43,6 +43,7 @@ const barrels: string[] = [
   'app/users/new',
   'app/users/user-form',
   'app/not-found',
+  'app/loader',
   /** @cli-barrel */
 ];
 

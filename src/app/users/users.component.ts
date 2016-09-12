@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { UserService } from './user.service';
 
+
 @Component({
   moduleId: module.id,
   selector: 'app-users',
@@ -25,7 +26,7 @@ export class UsersComponent implements OnInit {
     this.users.splice(index, 1);
 
     this._userService.deleteUser(user).subscribe(
-      result => console.log(result),
+      result => {},
       error => {
         this.users.splice(index, 0, user);
       }
