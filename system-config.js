@@ -35,6 +35,8 @@ var barrels = [
     'app/users/user-form',
     'app/not-found',
     'app/loader',
+    'app/shared/spinner',
+    'app/shared/pagination',
 ];
 var cliSystemConfigPackages = {};
 barrels.forEach(function (barrelName) {
