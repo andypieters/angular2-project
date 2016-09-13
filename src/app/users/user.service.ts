@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import { User } from './user';
 
 @Injectable()
@@ -8,20 +9,20 @@ export class UserService {
 
   constructor(private _http:Http) { }
 
-  getUsers(){
+  getUsers():Observable<User[]>{
     return this._http.get(this._url)
         .map(result => result.json());
   }
 
-  addUser(user: User){
+  addUser(user: User):Observable<User>{
     return this._http.post(this._url, user)
         .map(result => result.json());
   }
-  getUser(userId: string){
+  getUser(userId: string):Observable<User>{
     return this._http.get(this._url+"/"+userId)
         .map(result => result.json());
   }
-  updateUser(userId: string, user: User){
+  updateUser(userId: string, user: User):Observable<User>{
     return this._http.put(this._url+"/"+userId, user)
         .map(result => result.json());
   }

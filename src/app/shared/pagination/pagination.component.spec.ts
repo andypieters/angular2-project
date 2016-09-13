@@ -3,11 +3,11 @@
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { addProviders, async, inject } from '@angular/core/testing';
-import { PostsComponent } from './posts.component';
+import { PaginationComponent } from './pagination.component';
 
-describe('Component: Posts', () => {
+describe('Component: Pagination', () => {
   it('should create an instance', () => {
-    let component = new PostsComponent();
+    let component = new PaginationComponent();
     expect(component).toBeTruthy();
   });
 });

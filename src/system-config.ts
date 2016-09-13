@@ -43,6 +43,8 @@ const barrels: string[] = [
   'app/users/user-form',
   'app/not-found',
   'app/loader',
+  'app/shared/spinner',
+  'app/shared/pagination',
   /** @cli-barrel */
 ];
 

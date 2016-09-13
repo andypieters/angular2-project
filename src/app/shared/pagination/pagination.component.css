@@ -1,0 +1,7 @@
+.active{
+    pointer-events: none;
+    cursor: default;
+}
+a{
+    cursor: pointer;
+}
