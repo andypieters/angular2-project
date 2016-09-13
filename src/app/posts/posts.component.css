@@ -1,6 +1,10 @@
 .list-group-item.post:hover, .list-group-item.post.selected{
     background-color: #ecf0f1;
 }
+.list-group-item.post.selected{
+    pointer-events: none;
+    cursor: default;
+}
 .list-group-item.post{
     cursor: pointer;
 }
