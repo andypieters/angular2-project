@@ -2,6 +2,7 @@
 <div>
 <button [routerLink]="['/users/new']" class="btn btn-primary">Add user</button>
 </div>
+<spinner [visible]="usersLoading"></spinner>
 <div *ngIf="users">
     <table class="table table-bordered">
         <thead>
